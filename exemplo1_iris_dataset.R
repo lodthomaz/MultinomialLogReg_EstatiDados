@@ -1,7 +1,7 @@
 # Pacotes
 library(dplyr)
-library(caret)
-library(nnet)
+library(caret)  # Classification and Regression Training
+library(nnet)   # Modelo
 
 # Base de Dados: Exemplo 1
 df_iris <- iris
@@ -32,7 +32,6 @@ df_treino$fitted_values <- predict(modelo, newdata = df_treino, "class")
 
 # Matriz de Confusão
 confusionMatrix(df_treino$Species, df_treino$fitted_values)
-
 
 # Valores preditos da base de teste
 df_teste$fitted_values <- predict(modelo, newdata = df_teste, "class")
