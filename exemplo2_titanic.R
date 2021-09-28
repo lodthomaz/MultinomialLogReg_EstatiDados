@@ -6,8 +6,9 @@ library(skimr)
 
 # Dados (https://www.kaggle.com/c/titanic/data)
 df_titanic <- read.csv2("Data/train.csv", sep = ',', dec = '.') %>% 
-  mutate(Pclass = as.factor(Pclass)) %>% 
-  select(Pclass, Survived, Sex, Age, SibSp, Parch, Embarked)
+  mutate(Pclass = as.factor(Pclass),
+         Survived = as.factor(Survived)) %>% 
+  select(Pclass, Survived, Sex, Age, SibSp, Parch, Embarked, Fare)
 
 # Variável Resposta
 df_titanic %>% 
